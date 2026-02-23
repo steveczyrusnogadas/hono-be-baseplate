@@ -1,0 +1,28 @@
+info:
+  name: auth-session
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/session"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("session request is authenticated", function () {
+          expect(res.status).to.equal(200);
+        });
+
+        test("session response matches signed-in user", function () {
+          expect(res.body).to.have.property("user");
+          expect(res.body.user.email).to.equal(bru.getVar("auth_email"));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

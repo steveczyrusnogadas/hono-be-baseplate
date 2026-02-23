@@ -2,3 +2,13 @@ name: local
 variables:
   - name: url
     value: http://localhost:3001
+  - name: client_origin
+    value: http://localhost:3001
+  - name: auth_name
+    value: Steve
+  - name: auth_password
+    value: password1234
+  - name: auth_email_domain
+    value: example.test
+  - name: auth_email
+    value: ""
