@@ -64,7 +64,9 @@ Provide a small Hono + Bun API baseplate with Drizzle-backed PostgreSQL persiste
 
 ## 6. File Map
 
-- `src/index.ts` — Hono app definition and route handlers.
+- `src/index.ts` — Hono app bootstrap and route mounting.
+- `src/types.ts` — Shared application types, including Hono `Variables`.
+- `src/routes/` — Feature-based route modules (`health.ts`, `auth.ts`, `session.ts`, `testing.ts`).
 - `src/config.ts` — environment parsing and derived database URL logic.
 - `src/database/index.ts` — Drizzle database client.
 - `src/database/schema/auth.ts` — auth-related PostgreSQL schema.
